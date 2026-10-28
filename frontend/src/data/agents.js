@@ -1,0 +1,72 @@
+export const agentsList = [
+  {
+    id: 1,
+    name: "Rahul Sharma",
+    agency: "Sharma Real Estate Advisory",
+    role: "Senior Property Advisor",
+    rating: 4.9,
+    reviews: 124,
+    phone: "+91 98765 43210",
+    email: "rahul@homehub.com",
+    city: "Ahmedabad",
+    specialization: "Luxury Villas & Plots",
+    propertiesCount: 18,
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    id: 2,
+    name: "Priya Patel",
+    agency: "Patel Property Advisory",
+    role: "Real Estate Consultant",
+    rating: 4.8,
+    reviews: 98,
+    phone: "+91 98765 43211",
+    email: "priya@homehub.com",
+    city: "Gandhinagar & Ahmedabad",
+    specialization: "High-Rise Apartments & Rentals",
+    propertiesCount: 24,
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    id: 3,
+    name: "Vikram Mehta",
+    agency: "Mehta Luxury Homes",
+    role: "Luxury Property Consultant",
+    rating: 5.0,
+    reviews: 142,
+    phone: "+91 98765 11223",
+    email: "vikram@homehub.com",
+    city: "Surat",
+    specialization: "Penthouses & Commercial",
+    propertiesCount: 15,
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    id: 4,
+    name: "Neha Joshi",
+    agency: "Joshi Property Solutions",
+    role: "Rental Specialist",
+    rating: 4.8,
+    reviews: 75,
+    phone: "+91 98765 43213",
+    email: "neha@homehub.com",
+    city: "Ahmedabad",
+    specialization: "Residential Rentals & Leasing",
+    propertiesCount: 31,
+    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    id: 5,
+    name: "Karan Shah",
+    agency: "Vadodara Realties",
+    role: "Senior Consultant",
+    rating: 4.7,
+    reviews: 64,
+    phone: "+91 98123 45678",
+    email: "karan@homehub.com",
+    city: "Vadodara",
+    specialization: "Residential & Commercial",
+    propertiesCount: 12,
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80"
+  }
+];
