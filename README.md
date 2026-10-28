@@ -13,33 +13,32 @@
 ## 🏛️ System Architecture
 
 ```mermaid
+
 flowchart TD
-    UserClient[Web Browser / Mobile Client\nReact 19 + Tailwind CSS]
-    
-    subgraph Frontend["Frontend Layer (Vercel)"]
-        Landing[Public Pages\nHome / Buy / Rent / Sell / Agents]
-        AIComponents[AI Chatbot Drawer\nSmart Search Bar\nAI Matchmaker & Valuation]
-        Dashboards[Role-Based Dashboards\nAdmin | Seller | Agent | Buyer]
-        AuthUI[Tab-Isolated Authentication\nRegistration & Self-Service Password Reset]
-    end
+    A["HomeHub Property Marketplace"]
 
-    subgraph Backend["Backend API Layer (Render / Express)"]
-        ExpressApp[Express 5 Server\nDynamic PORT + CORS + Rate Limiter]
-        AuthRouter[Auth Controller\nJWT + Bcrypt Hashing + Multi-Factor Reset]
-        PropertyRouter[Property Controller\nStrict Buy/Rent Filtering + Role Authorize]
-        AIRouter[AI Controller\nGemini 2.5 Flash SDK Integration]
-        AnalyticsRouter[Visitor Analytics Controller\nIP & Route Tracker]
-    end
+    A --> B["Frontend - React"]
+    A --> C["Backend - Node.js and Express"]
 
-    subgraph Integrations["External Services & Storage"]
-        MongoAtlas[(MongoDB Atlas Database\nhomehub.properties | users | visitors)]
-        GeminiAPI[Google Gemini 2.5 Flash API\nThinking Budget 0 Optimized]
-    end
+    B --> D["User Interface"]
+    D --> E["Buyer Dashboard"]
+    D --> F["Seller Dashboard"]
+    D --> G["Agent Dashboard"]
+    D --> H["Admin Dashboard"]
 
-    UserClient --> Frontend
-    Frontend -->|HTTPS / REST API| Backend
-    Backend --> MongoAtlas
-    AIRouter -->|Official Google GenAI SDK| GeminiAPI
+    B --> I["REST API Requests"]
+    I --> C
+
+    C --> J["Authentication and Authorization"]
+    C --> K["Property Management"]
+    C --> L["Wishlist and Appointments"]
+    C --> M["AI Property Assistant"]
+
+    J --> N[("MongoDB Atlas")]
+    K --> N
+    L --> N
+    M --> N
+
 ```
 
 ---
