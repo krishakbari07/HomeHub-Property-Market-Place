@@ -3,16 +3,23 @@ import { getSessionToken, clearTabSession } from "../utils/session";
 
 // Environment Variable baseURL fallback
 const getApiBaseUrl = () => {
-  if (typeof process !== "undefined" && process?.env?.REACT_APP_API_URL) {
-    return process.env.REACT_APP_API_URL;
-  }
-  // If hosted in production on a remote domain/hosting without env var set, prefer relative /api over localhost
-  if (
+  const envUrl = process.env.REACT_APP_API_URL;
+  const isRemote =
     typeof window !== "undefined" &&
     window.location.hostname !== "localhost" &&
-    window.location.hostname !== "127.0.0.1"
-  ) {
-    return "/api";
+    window.location.hostname !== "127.0.0.1";
+
+  // If hosted in production on a remote domain (e.g. Vercel), ensure requests target Render backend
+  if (isRemote) {
+    if (envUrl && !envUrl.includes("localhost") && !envUrl.includes("127.0.0.1") && envUrl !== "/api") {
+      return envUrl;
+    }
+    return "https://homehub-property-market-place.onrender.com/api";
+  }
+
+  // Local development
+  if (envUrl) {
+    return envUrl;
   }
   return "http://127.0.0.1:5000/api";
 };

@@ -38,6 +38,7 @@ const allowedOrigins = [
   "http://127.0.0.1:3000",
   "http://localhost:5000",
   "http://127.0.0.1:5000",
+  "https://home-hub-property-market-place.vercel.app",
   ...(process.env.FRONTEND_URL ? process.env.FRONTEND_URL.split(",").map((o) => o.trim()) : []),
 ];
 
